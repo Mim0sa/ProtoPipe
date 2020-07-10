@@ -23,28 +23,19 @@ class PPCanvasNavigationBar: UIView {
         
         backgroundColor = .navigatorBlack
         
+        // barItemButtons
         for i in 0...PPCanvasNavigationBar.BarItemButtonTypes.count - 1 {
-            let btn = PPBarItemButton()
-            addSubview(btn)
-            btn.setImage(UIImage(named: "lib"), for: .normal)
-            btn.addTarget(self, action: #selector(barItemButtonDidClick(sender:)), for: .touchUpInside)
-            btn.snp.makeConstraints { (make) in
-                make.bottom.equalTo(-10)
-                make.right.equalTo(-12 + i * -70)
-            }
-
-            barItemButtons.append(btn)
+            let barItemButton = makeBarItemButton(PPCanvasNavigationBar.BarItemButtonTypes[i], i)
+            barItemButtons.append(barItemButton)
         }
-        
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
 }
 
 // MARK: - Static Model
 extension PPCanvasNavigationBar {
-    static let BarItemButtonTypes: [PPCanvasBarItemButtonType] = [.Library, .Settings, .Run]
+    static let BarItemButtonTypes: [PPCanvasBarItemButtonType] = [.Run, .Settings, .Library]
 }
 
 // MARK: - Target Actions
@@ -57,5 +48,17 @@ enum PPCanvasBarItemButtonType: String {
 extension PPCanvasNavigationBar {
     @objc func barItemButtonDidClick(sender: PPBarItemButton) {
         
+    }
+}
+
+// MARK: - Helpers
+extension PPCanvasNavigationBar {
+    private func makeBarItemButton(_ type: PPCanvasBarItemButtonType, _ i: Int) -> UIButton { let
+        barItemButton = PPBarItemButton()
+        barItemButton.setImage(UIImage(named: "BarItem_" + type.rawValue), for: .normal)
+        barItemButton.addTarget(self, action: #selector(barItemButtonDidClick(sender:)), for: .touchUpInside)
+        addSubview(barItemButton)
+        barItemButton.snp.makeConstraints { (make) in make.bottom.equalTo(-10); make.right.equalTo( -12 + i * -70) }
+        return barItemButton
     }
 }

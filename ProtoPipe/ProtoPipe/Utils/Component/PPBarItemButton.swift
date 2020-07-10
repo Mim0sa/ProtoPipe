@@ -22,10 +22,9 @@ class PPBarItemButton: UIButton {
         layer.cornerRadius = 6
         
         imageView?.contentMode = .scaleAspectFit
-        imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
+        imageEdgeInsets = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         
         snp.makeConstraints { (make) in make.size.equalTo(CGSize(width: 58, height: 30)) }
-        
     }
     
     required init?(coder: NSCoder) {
