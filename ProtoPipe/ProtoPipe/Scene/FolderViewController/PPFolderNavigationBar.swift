@@ -48,7 +48,7 @@ class PPFolderNavigationBar: UIView {
         addSubview(alertBar)
         
         // barItems
-        for style in PPFolderNavigationBar.barItemStyles {
+        for style in PPFolderNavigationBar.BarItemStyles {
             let barItem = makeBarItem(with: style)
             barItems.append(barItem)
             addSubview(barItem)
@@ -163,5 +163,5 @@ extension PPFolderNavigationBar {
 
 // MARK: - Constant
 fileprivate extension PPFolderNavigationBar {
-    static let barItemStyles: [BarItemType] = [.New, .Select, .Cancel, .Share, .Delete]
+    static let BarItemStyles: [BarItemType] = [.New, .Select, .Cancel, .Share, .Delete]
 }
