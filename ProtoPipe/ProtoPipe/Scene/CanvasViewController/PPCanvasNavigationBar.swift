@@ -16,12 +16,25 @@ class PPCanvasNavigationBar: UIView {
     
     weak var delegate: PPCanvasNavigationBarDelegate?
     
+    var backButton: UIButton!
     var barItemButtons: [UIButton] = []
 
     init() {
         super.init(frame: CGRect())
         
         backgroundColor = .navigatorBlack
+        
+        // backButton
+        backButton = UIButton(type: .system)
+        backButton.setImage(#imageLiteral(resourceName: "Back"), for: .normal)
+        backButton.tintColor = .subtitleWhite
+        addSubview(backButton)
+        backButton.addTarget(self, action: #selector(backButtonDidClick(sender:)), for: .touchUpInside)
+        backButton.snp.makeConstraints { (make) in
+            make.size.equalTo(CGSize(width: 30, height: 30))
+            make.left.equalTo(14)
+            make.bottom.equalTo(-10)
+        }
         
         // barItemButtons
         for i in 0...PPCanvasNavigationBar.BarItemButtonTypes.count - 1 {
@@ -48,6 +61,10 @@ enum PPCanvasBarItemButtonType: String {
 extension PPCanvasNavigationBar {
     @objc func barItemButtonDidClick(sender: PPBarItemButton) {
         
+    }
+    
+    @objc func backButtonDidClick(sender: UIButton) {
+        delegate?.canvasNavigationBarDidClickBackBtn(self)
     }
 }
 

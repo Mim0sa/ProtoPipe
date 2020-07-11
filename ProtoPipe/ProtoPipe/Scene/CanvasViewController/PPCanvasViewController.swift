@@ -37,6 +37,6 @@ class PPCanvasViewController: PPBaseViewController {
 // MARK: - PPCanvasNavigationBarDelegate
 extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
     func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
-        
+        dismiss(animated: true, completion: nil)
     }
 }
