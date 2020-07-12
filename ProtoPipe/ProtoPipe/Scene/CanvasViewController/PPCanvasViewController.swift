@@ -30,6 +30,24 @@ class PPCanvasViewController: PPBaseViewController {
             make.left.right.top.equalTo(0)
             make.height.equalTo(56)
         }
+        
+        let gridEdge: CGFloat = 20
+        let path = UIBezierPath()
+        for i in 0...Int(screenWidth / gridEdge) + 1 {
+            path.move(to: CGPoint(x: CGFloat(i) * gridEdge - 10, y: 56))
+            path.addLine(to: CGPoint(x: CGFloat(i) * gridEdge - 10, y: screenWidth))
+        }
+        for j in 0...Int(screenWidth / gridEdge) + 1 {
+            path.move(to: CGPoint(x: 0, y: 66 + CGFloat(j) * gridEdge))
+            path.addLine(to: CGPoint(x: screenWidth, y: 66 + CGFloat(j) * gridEdge))
+        }
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.lineWidth = 1
+        shapeLayer.strokeColor = UIColor(withHex: 0x202122).cgColor
+        shapeLayer.path = path.cgPath
+        shapeLayer.lineCap = .square
+        shapeLayer.lineJoin = .bevel
+        view.layer.addSublayer(shapeLayer)
     }
     
 }
