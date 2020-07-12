@@ -11,7 +11,7 @@ import UIKit
 class PPToastViewController: PPBaseViewController {
     
     let toastNavigationBar = PPToastNavigationBar()
-    var contentView = UIScrollView()
+    var contentView = PPToastContentView()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -30,6 +30,8 @@ class PPToastViewController: PPBaseViewController {
         
         view.backgroundColor = .sceneBlack
         
+        contentView.contentSize = preferredContentSize
+        
         view.addSubview(toastNavigationBar)
         toastNavigationBar.snp.makeConstraints { (make) in
             make.left.right.top.equalToSuperview()
@@ -45,4 +47,16 @@ class PPToastViewController: PPBaseViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(false)
+    }
+    
+}
+
+class PPToastContentView: UIScrollView {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        endEditing(false)
+    }
 }

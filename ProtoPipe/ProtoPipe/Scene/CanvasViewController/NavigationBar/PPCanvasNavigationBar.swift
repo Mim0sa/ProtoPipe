@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SnapKit
 
 protocol PPCanvasNavigationBarDelegate: class {
     func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
+    func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
 }
 
 class PPCanvasNavigationBar: UIView {
@@ -17,6 +19,7 @@ class PPCanvasNavigationBar: UIView {
     weak var delegate: PPCanvasNavigationBarDelegate?
     
     var backButton: UIButton!
+    var titleLbl: UILabel!
     var barItemButtons: [UIButton] = []
 
     init() {
@@ -24,22 +27,36 @@ class PPCanvasNavigationBar: UIView {
         
         backgroundColor = .navigatorBlack
         
-        // backButton
-        backButton = UIButton(type: .system)
-        backButton.setImage(#imageLiteral(resourceName: "Back"), for: .normal)
-        backButton.tintColor = .subtitleWhite
-        addSubview(backButton)
-        backButton.addTarget(self, action: #selector(backButtonDidClick(sender:)), for: .touchUpInside)
-        backButton.snp.makeConstraints { (make) in
-            make.size.equalTo(CGSize(width: 30, height: 30))
-            make.left.equalTo(14)
-            make.bottom.equalTo(-10)
-        }
-        
         // barItemButtons
         for i in 0...PPCanvasNavigationBar.BarItemButtonTypes.count - 1 {
             let barItemButton = makeBarItemButton(PPCanvasNavigationBar.BarItemButtonTypes[i], i)
             barItemButtons.append(barItemButton)
+        }
+        
+        // backButton
+        backButton = UIButton(type: .system)
+        backButton.setImage(UIImage(named: "Back"), for: .normal)
+        backButton.tintColor = .subtitleWhite
+        backButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        addSubview(backButton)
+        backButton.addTarget(self, action: #selector(backButtonDidClick(sender:)), for: .touchUpInside)
+        backButton.snp.makeConstraints { (make) in
+            make.size.equalTo(CGSize(width: 50, height: 50))
+            make.bottom.equalToSuperview()
+            make.left.equalTo(6)
+        }
+        
+        // titleLbl
+        titleLbl = UILabel()
+        titleLbl.text = "ProtoPipe 第一稿 ProtoPipe 第一稿 ProtoPipe 第一稿"
+        titleLbl.textColor = .subtitleGray
+        titleLbl.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
+        addSubview(titleLbl)
+        titleLbl.snp.makeConstraints { (make) in
+            make.left.equalTo(60)
+            make.bottom.equalTo(-10)
+            make.height.equalTo(30)
+            make.right.equalTo(barItemButtons.last!.snp.left).offset(-50)
         }
     }
     
@@ -48,7 +65,7 @@ class PPCanvasNavigationBar: UIView {
 
 // MARK: - Static Model
 extension PPCanvasNavigationBar {
-    static let BarItemButtonTypes: [PPCanvasBarItemButtonType] = [.Run, .Settings, .Library]
+    static let BarItemButtonTypes: [PPCanvasBarItemButtonType] = [.Settings, .Run, .Library]
 }
 
 // MARK: - Target Actions
@@ -60,7 +77,7 @@ enum PPCanvasBarItemButtonType: String {
 
 extension PPCanvasNavigationBar {
     @objc func barItemButtonDidClick(sender: PPBarItemButton) {
-        
+        delegate?.canvasNavigationBarDidClickSettingsBtn(self)
     }
     
     @objc func backButtonDidClick(sender: UIButton) {

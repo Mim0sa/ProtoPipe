@@ -58,7 +58,6 @@ class PPNewFileToast: PPToastViewController {
         
         // Prepare UI
         toastNavigationBar.title = "New File"
-        contentView.contentSize = preferredContentSize
         
         fileNameLbl = makeTitleLabel(title: "File Name")
         contentView .addSubview(fileNameLbl)
@@ -73,7 +72,7 @@ class PPNewFileToast: PPToastViewController {
         fileNameTextField.backgroundColor = .textFieldGray
         fileNameTextField.textColor = .titleWhite
         fileNameTextField.borderStyle = .roundedRect
-        fileNameTextField.returnKeyType = .done
+        fileNameTextField.returnKeyType = .continue
         fileNameTextField.spellCheckingType = .no
         contentView.addSubview(fileNameTextField)
         fileNameTextField.snp.makeConstraints { (make) in
@@ -197,12 +196,6 @@ extension PPNewFileToast: UICollectionViewDelegate, UICollectionViewDataSource {
 
 // MARK: - Helper
 extension PPNewFileToast {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        contentView.endEditing(true)
-    }
-    
     private func makeTitleLabel(title: String) -> UILabel {
         let lbl = UILabel()
         lbl.text = title

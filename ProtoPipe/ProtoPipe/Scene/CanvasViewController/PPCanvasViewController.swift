@@ -39,4 +39,9 @@ extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
     func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
         dismiss(animated: true, completion: nil)
     }
+    
+    func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
+         let settingsToast = PPSettingsToast()
+         present(settingsToast, animated: true, completion: nil)
+    }
 }
