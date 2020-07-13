@@ -30,6 +30,8 @@
 		1BF7228A24BB244400F301D4 /* PPSettingsToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7228924BB244400F301D4 /* PPSettingsToast.swift */; };
 		38241CB9BD9C7728BAC23700 /* Pods_ProtoPipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5D18D6BD1039EFFC580209 /* Pods_ProtoPipe.framework */; };
 		839718DE24B5BC3100A37E7E /* PPCanvasNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839718DD24B5BC3100A37E7E /* PPCanvasNavigationBar.swift */; };
+		8397193124BC0DD600A37E7E /* PPCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397193024BC0DD600A37E7E /* PPCanvasView.swift */; };
+		8397193324BC204100A37E7E /* PPCanvasGridLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8397193224BC204100A37E7E /* PPCanvasGridLayer.swift */; };
 		839DB56724AAD25F002F0141 /* PPNewFileToastDeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56624AAD25F002F0141 /* PPNewFileToastDeviceCell.swift */; };
 		839DB56924AAE93F002F0141 /* PPDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56824AAE93F002F0141 /* PPDevice.swift */; };
 		839DB56B24AB03AC002F0141 /* PPTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56A24AB03AC002F0141 /* PPTemplate.swift */; };
@@ -69,6 +71,8 @@
 		334305D6CEA0E208BF38B60B /* Pods-ProtoPipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.debug.xcconfig"; sourceTree = "<group>"; };
 		4567E6E41458F82F47AB6789 /* Pods-ProtoPipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtoPipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe.release.xcconfig"; sourceTree = "<group>"; };
 		839718DD24B5BC3100A37E7E /* PPCanvasNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasNavigationBar.swift; sourceTree = "<group>"; };
+		8397193024BC0DD600A37E7E /* PPCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasView.swift; sourceTree = "<group>"; };
+		8397193224BC204100A37E7E /* PPCanvasGridLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasGridLayer.swift; sourceTree = "<group>"; };
 		839DB56624AAD25F002F0141 /* PPNewFileToastDeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNewFileToastDeviceCell.swift; sourceTree = "<group>"; };
 		839DB56824AAE93F002F0141 /* PPDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDevice.swift; sourceTree = "<group>"; };
 		839DB56A24AB03AC002F0141 /* PPTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTemplate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */,
+				8397193224BC204100A37E7E /* PPCanvasGridLayer.swift */,
+				8397192F24BC0DB600A37E7E /* CanvasView */,
+				8397193424BC2B0200A37E7E /* Navigator */,
+				8397193524BC2B1000A37E7E /* Inspector */,
 				1BF7228B24BB375E00F301D4 /* NavigationBar */,
 				1BF7228724BB236B00F301D4 /* Toasts */,
 			);
@@ -262,6 +270,28 @@
 				839DB56A24AB03AC002F0141 /* PPTemplate.swift */,
 			);
 			path = File;
+			sourceTree = "<group>";
+		};
+		8397192F24BC0DB600A37E7E /* CanvasView */ = {
+			isa = PBXGroup;
+			children = (
+				8397193024BC0DD600A37E7E /* PPCanvasView.swift */,
+			);
+			path = CanvasView;
+			sourceTree = "<group>";
+		};
+		8397193424BC2B0200A37E7E /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+		8397193524BC2B1000A37E7E /* Inspector */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Inspector;
 			sourceTree = "<group>";
 		};
 		83CDE7AD2498B1FE00BB72FB /* ToastViewController */ = {
@@ -445,9 +475,11 @@
 				1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */,
 				83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */,
 				1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */,
+				8397193324BC204100A37E7E /* PPCanvasGridLayer.swift in Sources */,
 				1B34EAF72477BCF0009AC43B /* PPFolderNavigationBar.swift in Sources */,
 				83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */,
 				1B34EAEB247521F6009AC43B /* PPBaseViewController.swift in Sources */,
+				8397193124BC0DD600A37E7E /* PPCanvasView.swift in Sources */,
 				1B9F0143249B829200D7473D /* PPToastViewControllerDelegate.swift in Sources */,
 				839DB56924AAE93F002F0141 /* PPDevice.swift in Sources */,
 				1B34EAED24761A42009AC43B /* PPCanvasViewController.swift in Sources */,
