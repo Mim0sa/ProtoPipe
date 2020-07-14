@@ -16,6 +16,8 @@ protocol PPCanvasViewControllerDelegate: class {
 class PPCanvasViewController: PPBaseViewController {
     
     let canvasNavigationBar = PPCanvasNavigationBar()
+    let navigatorPageView = PPNavigatorPageView()
+    let inspectorPageView = PPInspectorPageView()
     
     weak var delegate: PPCanvasViewControllerDelegate?
 
@@ -24,13 +26,33 @@ class PPCanvasViewController: PPBaseViewController {
         
         view.backgroundColor = .sceneBlack
         
+        // Grid Layer
         view.layer.addSublayer(PPCanvasGridLayer())
         
+        // Navigation Bar
         canvasNavigationBar.delegate = self
         view.addSubview(canvasNavigationBar)
         canvasNavigationBar.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(0)
             make.height.equalTo(56)
+        }
+        
+        // Navigator Page
+        view.addSubview(navigatorPageView)
+        navigatorPageView.snp.makeConstraints { (make) in
+            make.width.equalTo(260)
+            make.left.equalToSuperview()
+            make.top.equalTo(canvasNavigationBar.snp.bottom)
+            make.bottom.equalToSuperview()
+        }
+        
+        // Inspector Page
+        view.addSubview(inspectorPageView)
+        inspectorPageView.snp.makeConstraints { (make) in
+            make.width.equalTo(260)
+            make.right.equalToSuperview()
+            make.top.equalTo(canvasNavigationBar.snp.bottom)
+            make.bottom.equalToSuperview()
         }
     }
     

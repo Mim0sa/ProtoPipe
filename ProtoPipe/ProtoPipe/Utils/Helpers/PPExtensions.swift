@@ -12,6 +12,7 @@ import UIKit
 extension UIColor {
     static let navigatorBlack   = UIColor(withHex: 0x131415)
     static let sceneBlack       = UIColor(withHex: 0x191B1D)
+    static let sceneGray        = UIColor(withHex: 0x202122)
     static let textFieldGray    = UIColor(withHex: 0x272829)
     
     static let contentGray      = UIColor(withHex: 0x444444)

@@ -24,7 +24,7 @@ class PPCanvasGridLayer: CAShapeLayer {
             bpath.addLine(to: CGPoint(x: screenWidth, y: 66 + CGFloat(j) * gridEdge))
         }
         lineWidth = 1
-        strokeColor = UIColor(withHex: 0x202122).cgColor
+        strokeColor = UIColor.sceneGray.cgColor
         path = bpath.cgPath
         lineCap = .square
         lineJoin = .bevel
