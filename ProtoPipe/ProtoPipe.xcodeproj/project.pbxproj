@@ -261,7 +261,7 @@
 		8345DE8624A884A50035EE71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8345DE8724A89BDE0035EE71 /* File */,
+				8345DE8724A89BDE0035EE71 /* Folder */,
 				8397193A24BC2E2E00A37E7E /* Canvas */,
 				8397193C24BC2E5200A37E7E /* Inspector */,
 				8397193B24BC2E4800A37E7E /* Navigator */,
@@ -269,14 +269,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8345DE8724A89BDE0035EE71 /* File */ = {
+		8345DE8724A89BDE0035EE71 /* Folder */ = {
 			isa = PBXGroup;
 			children = (
 				1BF7228324B1821500F301D4 /* PPFile.swift */,
 				839DB56824AAE93F002F0141 /* PPDevice.swift */,
 				839DB56A24AB03AC002F0141 /* PPTemplate.swift */,
 			);
-			path = File;
+			path = Folder;
 			sourceTree = "<group>";
 		};
 		8397192F24BC0DB600A37E7E /* CanvasView */ = {
