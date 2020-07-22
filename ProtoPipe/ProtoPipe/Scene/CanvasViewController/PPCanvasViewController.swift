@@ -40,7 +40,7 @@ class PPCanvasViewController: PPBaseViewController {
         // Navigator Page
         view.addSubview(navigatorPageView)
         navigatorPageView.snp.makeConstraints { (make) in
-            make.width.equalTo(260)
+            make.width.equalTo(300)
             make.left.equalToSuperview()
             make.top.equalTo(canvasNavigationBar.snp.bottom)
             make.bottom.equalToSuperview()
@@ -49,7 +49,7 @@ class PPCanvasViewController: PPBaseViewController {
         // Inspector Page
         view.addSubview(inspectorPageView)
         inspectorPageView.snp.makeConstraints { (make) in
-            make.width.equalTo(260)
+            make.width.equalTo(300)
             make.right.equalToSuperview()
             make.top.equalTo(canvasNavigationBar.snp.bottom)
             make.bottom.equalToSuperview()
