@@ -41,7 +41,7 @@ class PPCanvasViewController: PPBaseViewController {
         view.addSubview(navigatorPageView)
         navigatorPageView.snp.makeConstraints { (make) in
             make.width.equalTo(300)
-            make.left.equalToSuperview()
+            make.left.equalToSuperview().offset(-300)
             make.top.equalTo(canvasNavigationBar.snp.bottom)
             make.bottom.equalToSuperview()
         }
@@ -50,7 +50,7 @@ class PPCanvasViewController: PPBaseViewController {
         view.addSubview(inspectorPageView)
         inspectorPageView.snp.makeConstraints { (make) in
             make.width.equalTo(300)
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().offset(300)
             make.top.equalTo(canvasNavigationBar.snp.bottom)
             make.bottom.equalToSuperview()
         }
@@ -67,5 +67,11 @@ extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
     func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
          let settingsToast = PPSettingsToast()
          present(settingsToast, animated: true, completion: nil)
+    }
+    
+    func canvasNavigationBarDidClickPageControl(_ canvasNavigationBar: PPCanvasNavigationBar, isSelected: [Bool]) {
+        navigatorPageView.isShowing = isSelected[0]
+        inspectorPageView.isShowing = isSelected[1]
+        UIView.animate(withDuration: 0.2) { self.view.layoutIfNeeded() }
     }
 }

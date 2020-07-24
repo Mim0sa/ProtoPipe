@@ -12,6 +12,8 @@ import SnapKit
 protocol PPCanvasNavigationBarDelegate: class {
     func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
     func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
+    
+    func canvasNavigationBarDidClickPageControl(_ canvasNavigationBar: PPCanvasNavigationBar, isSelected: [Bool])
 }
 
 class PPCanvasNavigationBar: UIView {
@@ -21,11 +23,21 @@ class PPCanvasNavigationBar: UIView {
     var backButton: UIButton!
     var titleLbl: UILabel!
     var barItemButtons: [UIButton] = []
+    var barPageControl: PPCanvasBarPageControl!
 
     init() {
         super.init(frame: CGRect())
         
         backgroundColor = .navigatorBlack
+        
+        // barPageControl
+        barPageControl = PPCanvasBarPageControl()
+        barPageControl.delegate = self
+        addSubview(barPageControl)
+        barPageControl.snp.makeConstraints { (make) in
+            make.bottom.equalTo(-10)
+            make.right.equalTo(-15)
+        }
         
         // barItemButtons
         for i in 0...PPCanvasNavigationBar.BarItemButtonTypes.count - 1 {
@@ -87,12 +99,19 @@ extension PPCanvasNavigationBar {
 
 // MARK: - Helpers
 extension PPCanvasNavigationBar {
-    private func makeBarItemButton(_ type: PPCanvasBarItemButtonType, _ i: Int) -> UIButton { let
+    private func makeBarItemButton(_ type: PPCanvasBarItemButtonType, _ i: Int) -> PPBarItemButton { let
         barItemButton = PPBarItemButton()
         barItemButton.setImage(UIImage(named: "BarItem_" + type.rawValue), for: .normal)
         barItemButton.addTarget(self, action: #selector(barItemButtonDidClick(sender:)), for: .touchUpInside)
         addSubview(barItemButton)
-        barItemButton.snp.makeConstraints { (make) in make.bottom.equalTo(-10); make.right.equalTo( -12 + i * -70) }
+        barItemButton.snp.makeConstraints { (make) in make.bottom.equalTo(-10); make.right.equalTo(barPageControl.snp.left).offset(-12 - i * 70) }
         return barItemButton
+    }
+}
+
+// MARK: -
+extension PPCanvasNavigationBar: PPCanvasBarPageControlDelegate {
+    func barPageControlDidClick(_ canvasBarPageControl: PPCanvasBarPageControl, isSelected: [Bool]) {
+        delegate?.canvasNavigationBarDidClickPageControl(self, isSelected: isSelected)
     }
 }

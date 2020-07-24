@@ -9,6 +9,20 @@
 import UIKit
 
 class PPInspectorPageView: UIView {
+    
+    var isShowing: Bool = false {
+        willSet {
+            if newValue == isShowing { return }
+            
+            snp.updateConstraints { (update) in
+                if newValue {
+                    update.right.equalToSuperview()
+                } else {
+                    update.right.equalTo(frame.width)
+                }
+            }
+        }
+    }
 
     init() {
         super.init(frame: CGRect())

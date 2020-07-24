@@ -43,6 +43,7 @@
 		83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A72498934600BB72FB /* PPToastViewController.swift */; };
 		83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A92498ACB100BB72FB /* PPExtensions.swift */; };
 		83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */; };
+		83ED564C24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ED564B24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		83CDE7A72498934600BB72FB /* PPToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastViewController.swift; sourceTree = "<group>"; };
 		83CDE7A92498ACB100BB72FB /* PPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPExtensions.swift; sourceTree = "<group>"; };
 		83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastNavigationBar.swift; sourceTree = "<group>"; };
+		83ED564B24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasBarPageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				839718DD24B5BC3100A37E7E /* PPCanvasNavigationBar.swift */,
+				83ED564B24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				1B9F0146249B831D00D7473D /* PPNewFileToast.swift in Sources */,
 				839DB56724AAD25F002F0141 /* PPNewFileToastDeviceCell.swift in Sources */,
 				1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */,
+				83ED564C24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift in Sources */,
 				1BF7228224A7658400F301D4 /* PPActionButton.swift in Sources */,
 				83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */,
 				1BF7228624B7745900F301D4 /* PPBarItemButton.swift in Sources */,

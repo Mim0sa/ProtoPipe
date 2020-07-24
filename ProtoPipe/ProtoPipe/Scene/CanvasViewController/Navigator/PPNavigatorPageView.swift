@@ -9,6 +9,20 @@
 import UIKit
 
 class PPNavigatorPageView: UIView {
+    
+    var isShowing: Bool = false {
+        willSet {
+            if newValue == isShowing { return }
+            
+            snp.updateConstraints { (update) in
+                if newValue {
+                    update.left.equalToSuperview()
+                } else {
+                    update.left.equalTo(-frame.width)
+                }
+            }
+        }
+    }
 
     init() {
         super.init(frame: CGRect())
