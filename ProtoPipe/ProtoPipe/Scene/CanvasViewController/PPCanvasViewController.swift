@@ -29,6 +29,8 @@ class PPCanvasViewController: PPBaseViewController {
         // Grid Layer
         view.layer.addSublayer(PPCanvasGridLayer())
         
+        view.layer.contents = UIImage(named: "pic")?.cgImage
+        
         // Navigation Bar
         canvasNavigationBar.delegate = self
         view.addSubview(canvasNavigationBar)
@@ -65,7 +67,7 @@ extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
     }
     
     func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
-        canvasNavigationBar.barPageControl.setBarPageControlStatus(isSelected: [false, false])
+        canvasNavigationBar.barPageControl.hideBarPageControls()
         
         let settingsToast = PPSettingsToast()
         present(settingsToast, animated: true, completion: nil)

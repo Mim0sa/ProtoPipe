@@ -61,6 +61,10 @@ class PPCanvasBarPageControl: UIView {
         delegate?.barPageControlDidChange(self, isSelected: isSelected)
     }
     
+    func hideBarPageControls() {
+        setBarPageControlStatus(isSelected: [false, false])
+    }
+    
     func setBarPageControlStatus(isSelected: [Bool]) {
         self.isSelected = isSelected
         

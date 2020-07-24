@@ -44,6 +44,7 @@
 		83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7A92498ACB100BB72FB /* PPExtensions.swift */; };
 		83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */; };
 		83ED564C24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ED564B24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift */; };
+		83ED565124CAE252000C0E68 /* PPBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ED565024CAE252000C0E68 /* PPBlurView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		83CDE7A92498ACB100BB72FB /* PPExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPExtensions.swift; sourceTree = "<group>"; };
 		83CDE7AB2498B1F800BB72FB /* PPToastNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToastNavigationBar.swift; sourceTree = "<group>"; };
 		83ED564B24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasBarPageControl.swift; sourceTree = "<group>"; };
+		83ED565024CAE252000C0E68 /* PPBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPBlurView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 		1BF7228024A7651300F301D4 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				83ED565024CAE252000C0E68 /* PPBlurView.swift */,
 				1BF7228124A7658400F301D4 /* PPActionButton.swift */,
 				1BF7228524B7745900F301D4 /* PPBarItemButton.swift */,
 			);
@@ -498,6 +501,7 @@
 				839DB56B24AB03AC002F0141 /* PPTemplate.swift in Sources */,
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
 				839718DE24B5BC3100A37E7E /* PPCanvasNavigationBar.swift in Sources */,
+				83ED565124CAE252000C0E68 /* PPBlurView.swift in Sources */,
 				1B9F0146249B831D00D7473D /* PPNewFileToast.swift in Sources */,
 				839DB56724AAD25F002F0141 /* PPNewFileToastDeviceCell.swift in Sources */,
 				1B9F013C2493714500D7473D /* PPDotButton.swift in Sources */,
