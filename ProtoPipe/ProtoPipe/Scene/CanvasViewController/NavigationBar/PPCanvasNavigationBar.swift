@@ -13,7 +13,7 @@ protocol PPCanvasNavigationBarDelegate: class {
     func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
     func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
     
-    func canvasNavigationBarDidClickPageControl(_ canvasNavigationBar: PPCanvasNavigationBar, isSelected: [Bool])
+    func canvasNavigationBarDidChangePageControl(_ canvasNavigationBar: PPCanvasNavigationBar, isSelected: [Bool])
 }
 
 class PPCanvasNavigationBar: UIView {
@@ -111,7 +111,7 @@ extension PPCanvasNavigationBar {
 
 // MARK: -
 extension PPCanvasNavigationBar: PPCanvasBarPageControlDelegate {
-    func barPageControlDidClick(_ canvasBarPageControl: PPCanvasBarPageControl, isSelected: [Bool]) {
-        delegate?.canvasNavigationBarDidClickPageControl(self, isSelected: isSelected)
+    func barPageControlDidChange(_ canvasBarPageControl: PPCanvasBarPageControl, isSelected: [Bool]) {
+        delegate?.canvasNavigationBarDidChangePageControl(self, isSelected: isSelected)
     }
 }

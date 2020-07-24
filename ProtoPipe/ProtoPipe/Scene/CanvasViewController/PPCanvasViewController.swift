@@ -65,11 +65,13 @@ extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
     }
     
     func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
-         let settingsToast = PPSettingsToast()
-         present(settingsToast, animated: true, completion: nil)
+        canvasNavigationBar.barPageControl.setBarPageControlStatus(isSelected: [false, false])
+        
+        let settingsToast = PPSettingsToast()
+        present(settingsToast, animated: true, completion: nil)
     }
     
-    func canvasNavigationBarDidClickPageControl(_ canvasNavigationBar: PPCanvasNavigationBar, isSelected: [Bool]) {
+    func canvasNavigationBarDidChangePageControl(_ canvasNavigationBar: PPCanvasNavigationBar, isSelected: [Bool]) {
         navigatorPageView.isShowing = isSelected[0]
         inspectorPageView.isShowing = isSelected[1]
         UIView.animate(withDuration: 0.2) { self.view.layoutIfNeeded() }

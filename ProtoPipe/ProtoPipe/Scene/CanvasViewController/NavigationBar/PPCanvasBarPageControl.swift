@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PPCanvasBarPageControlDelegate: class {
-    func barPageControlDidClick(_ canvasBarPageControl: PPCanvasBarPageControl, isSelected: [Bool])
+    func barPageControlDidChange(_ canvasBarPageControl: PPCanvasBarPageControl, isSelected: [Bool])
 }
 
 class PPCanvasBarPageControl: UIView {
@@ -45,25 +45,31 @@ class PPCanvasBarPageControl: UIView {
         rightPageControl.setImage(UIImage(named: "BarItem_RControl_S"), for: .selected)
         rightPageControl.snp.makeConstraints { (make) in
             make.right.bottom.equalToSuperview()
-            make.left.equalTo(leftPageControl.snp.right).offset(2)
+            make.left.equalTo(leftPageControl.snp.right).offset(1)
         }
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
-    @objc func barItemButtonDidClick(sender: PPBarItemButton) {
+    @objc func barItemButtonDidChange(sender: PPBarItemButton) {
         if sender == leftPageControl {
             isSelected[0].toggle()
         } else {
             isSelected[1].toggle()
         }
         
-        delegate?.barPageControlDidClick(self, isSelected: isSelected)
+        delegate?.barPageControlDidChange(self, isSelected: isSelected)
+    }
+    
+    func setBarPageControlStatus(isSelected: [Bool]) {
+        self.isSelected = isSelected
+        
+        delegate?.barPageControlDidChange(self, isSelected: isSelected)
     }
 
     private func makeBarItemButton() -> PPBarItemButton { let
         barItemButton = PPBarItemButton()
-        barItemButton.addTarget(self, action: #selector(barItemButtonDidClick(sender:)), for: .touchUpInside)
+        barItemButton.addTarget(self, action: #selector(barItemButtonDidChange(sender:)), for: .touchUpInside)
         addSubview(barItemButton)
         return barItemButton
     }
