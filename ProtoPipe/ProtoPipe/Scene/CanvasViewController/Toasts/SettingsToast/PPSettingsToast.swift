@@ -11,8 +11,6 @@ import SnapKit
 
 class PPSettingsToast: PPToastViewController {
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -11,8 +11,11 @@ import SnapKit
 
 protocol PPCanvasNavigationBarDelegate: class {
     func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
-    func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
     
+    func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
+    func canvasNavigationBarDidClickLaunchBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
+    func canvasNavigationBarDidClickLibraryBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
+
     func canvasNavigationBarDidChangePageControl(_ canvasNavigationBar: PPCanvasNavigationBar, isSelected: [Bool])
 }
 
@@ -89,7 +92,15 @@ enum PPCanvasBarItemButtonType: String {
 
 extension PPCanvasNavigationBar {
     @objc func barItemButtonDidClick(sender: PPBarItemButton) {
-        delegate?.canvasNavigationBarDidClickSettingsBtn(self)
+        switch sender {
+        case barItemButtons[0]:
+            delegate?.canvasNavigationBarDidClickSettingsBtn(self)
+        case barItemButtons[1]:
+            delegate?.canvasNavigationBarDidClickLaunchBtn(self)
+        case barItemButtons[2]:
+            delegate?.canvasNavigationBarDidClickLibraryBtn(self)
+        default: break
+        }
     }
     
     @objc func backButtonDidClick(sender: UIButton) {

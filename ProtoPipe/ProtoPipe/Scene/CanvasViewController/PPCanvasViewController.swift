@@ -29,7 +29,7 @@ class PPCanvasViewController: PPBaseViewController {
         // Grid Layer
         view.layer.addSublayer(PPCanvasGridLayer())
         
-        view.layer.contents = UIImage(named: "pic")?.cgImage
+        //view.layer.contents = UIImage(named: "pic")?.cgImage
         
         // Navigation Bar
         canvasNavigationBar.delegate = self
@@ -64,6 +64,14 @@ class PPCanvasViewController: PPBaseViewController {
 extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
     func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func canvasNavigationBarDidClickLaunchBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
+        
+    }
+    
+    func canvasNavigationBarDidClickLibraryBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
+        
     }
     
     func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {

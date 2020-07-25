@@ -136,6 +136,13 @@
 			path = ProtoPipe;
 			sourceTree = "<group>";
 		};
+		1B52E33224CB377E00C5F3FE /* LibraryToast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LibraryToast;
+			sourceTree = "<group>";
+		};
 		1B9E6726247A185D00D649B3 /* FolderViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +239,7 @@
 		1BF7228724BB236B00F301D4 /* Toasts */ = {
 			isa = PBXGroup;
 			children = (
+				1B52E33224CB377E00C5F3FE /* LibraryToast */,
 				1BF7228824BB23EB00F301D4 /* SettingsToast */,
 			);
 			path = Toasts;
