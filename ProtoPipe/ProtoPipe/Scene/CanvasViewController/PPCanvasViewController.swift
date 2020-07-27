@@ -58,10 +58,6 @@ class PPCanvasViewController: PPBaseViewController {
         }
     }
     
-    deinit {
-        print("canvas deinit")
-    }
-    
 }
 
 // MARK: - PPCanvasNavigationBarDelegate
