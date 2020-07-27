@@ -283,8 +283,8 @@
 			children = (
 				8345DE8724A89BDE0035EE71 /* Folder */,
 				8397193A24BC2E2E00A37E7E /* Canvas */,
-				8397193C24BC2E5200A37E7E /* Inspector */,
 				8397193B24BC2E4800A37E7E /* Navigator */,
+				8397193C24BC2E5200A37E7E /* Inspector */,
 			);
 			path = Model;
 			sourceTree = "<group>";

@@ -13,7 +13,7 @@ class PPNode {
     var name: String
     var uuid = UUID()
     
-    var parentNode: PPNode?
+    weak var parentNode: PPNode?
     var childNodes: [PPNode] = []
     
     var position: CGPoint?
@@ -24,14 +24,17 @@ class PPNode {
     }
     
     func addChildNode(node: PPNode) {
+        node.parentNode = self
         childNodes.append(node)
     }
     
     func insertChildNode(node: PPNode, at index: Int) {
+        node.parentNode = self
         childNodes.insert(node, at: index)
     }
     
     func removeChildNode(at index: Int) {
+        childNodes[index].parentNode = nil
         childNodes.remove(at: index)
     }
     
