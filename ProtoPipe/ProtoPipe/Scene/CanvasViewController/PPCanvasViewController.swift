@@ -71,12 +71,13 @@ extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
     }
     
     func canvasNavigationBarDidClickLibraryBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
+        canvasNavigationBar.barPageControl.hideBarPageControls()
         
+        let libraryToast = PPLibraryToast()
+        present(libraryToast, animated: true, completion: nil)
     }
     
     func canvasNavigationBarDidClickSettingsBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
-        canvasNavigationBar.barPageControl.hideBarPageControls()
-        
         let settingsToast = PPSettingsToast()
         present(settingsToast, animated: true, completion: nil)
     }

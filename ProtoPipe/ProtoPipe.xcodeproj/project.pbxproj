@@ -18,6 +18,7 @@
 		1B3C39DD2462CCD60082AF94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39DB2462CCD60082AF94 /* Main.storyboard */; };
 		1B3C39DF2462CCDE0082AF94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */; };
 		1B3C39E22462CCDE0082AF94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */; };
+		1B52E33424D057D300C5F3FE /* PPLibraryToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B52E33324D057D300C5F3FE /* PPLibraryToast.swift */; };
 		1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */; };
 		1B9E672A247A2AB300D649B3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6729247A2AB300D649B3 /* Common.swift */; };
 		1B9E672C247BD41F00D649B3 /* PPFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */; };
@@ -65,6 +66,7 @@
 		1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B3C39E12462CCDE0082AF94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B3C39E32462CCDE0082AF94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B52E33324D057D300C5F3FE /* PPLibraryToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLibraryToast.swift; sourceTree = "<group>"; };
 		1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1B9E6729247A2AB300D649B3 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1B9E672B247BD41F00D649B3 /* PPFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		1B52E33224CB377E00C5F3FE /* LibraryToast */ = {
 			isa = PBXGroup;
 			children = (
+				1B52E33324D057D300C5F3FE /* PPLibraryToast.swift */,
 			);
 			path = LibraryToast;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				83CDE7AA2498ACB100BB72FB /* PPExtensions.swift in Sources */,
 				1BF7228624B7745900F301D4 /* PPBarItemButton.swift in Sources */,
 				1B34EAF52476311A009AC43B /* MagicMoveAnimator.swift in Sources */,
+				1B52E33424D057D300C5F3FE /* PPLibraryToast.swift in Sources */,
 				1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */,
 				83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */,
 				1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */,
