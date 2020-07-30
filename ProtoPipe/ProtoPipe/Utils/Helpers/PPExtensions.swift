@@ -16,6 +16,9 @@ extension UIColor {
     static let textFieldGray    = UIColor(withHex: 0x272829)
     
     static let contentGray      = UIColor(withHex: 0x444444)
+    static let smokeGray        = UIColor(withHex: 0x666666)
+    static let mediumGray       = UIColor(withHex: 0x888888)
+    
     static let subtitleGray     = UIColor(withHex: 0xcccccc)
     static let subtitleWhite    = UIColor(withHex: 0xdddddd)
     static let titleWhite       = UIColor(withHex: 0xeeeeee)
