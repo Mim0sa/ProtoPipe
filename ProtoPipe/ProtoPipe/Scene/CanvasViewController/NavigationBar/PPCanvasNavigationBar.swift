@@ -25,7 +25,9 @@ class PPCanvasNavigationBar: UIView {
     
     var backButton: UIButton!
     var titleLbl: UILabel!
+    
     var barItemButtons: [UIButton] = []
+    var barZoomControl: PPCanvasBarZoomControl!
     var barPageControl: PPCanvasBarPageControl!
 
     init() {
@@ -40,6 +42,15 @@ class PPCanvasNavigationBar: UIView {
         barPageControl.snp.makeConstraints { (make) in
             make.bottom.equalTo(-10)
             make.right.equalTo(-15)
+        }
+        
+        // barZoomControl
+        barZoomControl = PPCanvasBarZoomControl()
+//        barZoomControl.delegate = self
+        addSubview(barZoomControl)
+        barZoomControl.snp.makeConstraints { (make) in
+            make.bottom.equalTo(-10)
+            make.right.equalTo(barPageControl.snp.left).offset(-12)
         }
         
         // barItemButtons
@@ -115,7 +126,7 @@ extension PPCanvasNavigationBar {
         barItemButton.setImage(UIImage(named: "BarItem_" + type.rawValue), for: .normal)
         barItemButton.addTarget(self, action: #selector(barItemButtonDidClick(sender:)), for: .touchUpInside)
         addSubview(barItemButton)
-        barItemButton.snp.makeConstraints { (make) in make.bottom.equalTo(-10); make.right.equalTo(barPageControl.snp.left).offset(-12 - i * 70) }
+        barItemButton.snp.makeConstraints { (make) in make.bottom.equalTo(-10); make.right.equalTo(barZoomControl.snp.left).offset(-12 - i * 70) }
         return barItemButton
     }
 }

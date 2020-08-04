@@ -18,6 +18,7 @@
 		1B3C39DD2462CCD60082AF94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39DB2462CCD60082AF94 /* Main.storyboard */; };
 		1B3C39DF2462CCDE0082AF94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */; };
 		1B3C39E22462CCDE0082AF94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C39E02462CCDE0082AF94 /* LaunchScreen.storyboard */; };
+		1B444DE724D2F98E00C1CC36 /* PPCanvasBarZoomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B444DE624D2F98E00C1CC36 /* PPCanvasBarZoomControl.swift */; };
 		1B52E33424D057D300C5F3FE /* PPLibraryToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B52E33324D057D300C5F3FE /* PPLibraryToast.swift */; };
 		1B9E6728247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */; };
 		1B9E672A247A2AB300D649B3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9E6729247A2AB300D649B3 /* Common.swift */; };
@@ -66,6 +67,7 @@
 		1B3C39DE2462CCDE0082AF94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B3C39E12462CCDE0082AF94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B3C39E32462CCDE0082AF94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B444DE624D2F98E00C1CC36 /* PPCanvasBarZoomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasBarZoomControl.swift; sourceTree = "<group>"; };
 		1B52E33324D057D300C5F3FE /* PPLibraryToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLibraryToast.swift; sourceTree = "<group>"; };
 		1B9E6727247A29DC00D649B3 /* PPFolderCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPFolderCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		1B9E6729247A2AB300D649B3 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				839718DD24B5BC3100A37E7E /* PPCanvasNavigationBar.swift */,
 				83ED564B24CA8AFF000C0E68 /* PPCanvasBarPageControl.swift */,
+				1B444DE624D2F98E00C1CC36 /* PPCanvasBarZoomControl.swift */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B444DE724D2F98E00C1CC36 /* PPCanvasBarZoomControl.swift in Sources */,
 				839DB56B24AB03AC002F0141 /* PPTemplate.swift in Sources */,
 				1B3C39D62462CCD60082AF94 /* AppDelegate.swift in Sources */,
 				839718DE24B5BC3100A37E7E /* PPCanvasNavigationBar.swift in Sources */,
