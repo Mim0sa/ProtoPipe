@@ -11,6 +11,8 @@ import SnapKit
 
 class PPLibraryToast: PPToastViewController {
     
+    weak var delegate: PPToastViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

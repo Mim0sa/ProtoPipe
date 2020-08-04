@@ -11,7 +11,9 @@ import UIKit
 @objc protocol PPToastViewControllerDelegate: class {
     func toastViewControllerDidClickCancelBtn(_ toastViewController: PPToastViewController)
     
-    @objc optional func newFileToastDidClickConfirmBtn(_ toastViewController: PPToastViewController, newFileModel: NewFileModel)
+    // New File Toast
+    @objc optional func newFileToastDidClickConfirmBtn(_ newFileToast: PPNewFileToast, newFileModel: NewFileModel)
     
-    
+    // Library Toast
+    @objc optional func lilraryToastDidDragNode(_ libraryToast: PPLibraryToast)
 }
