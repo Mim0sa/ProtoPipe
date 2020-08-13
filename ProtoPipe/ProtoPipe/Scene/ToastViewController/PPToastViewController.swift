@@ -39,6 +39,7 @@ class PPToastViewController: PPBaseViewController {
         }
         
         contentView.bounces = false
+        contentView.contentSize = CGSize(width: 550, height: 660 - 78)
         contentView.showsVerticalScrollIndicator = false
         view.addSubview(contentView)
         contentView.snp.makeConstraints { (make) in

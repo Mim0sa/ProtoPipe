@@ -2,7 +2,7 @@
 //  PPCanvas.swift
 //  ProtoPipe
 //
-//  Created by CM on 2020/7/27.
+//  Created by 吉乞悠 on 2020/7/27.
 //  Copyright © 2020 吉乞悠. All rights reserved.
 //
 
