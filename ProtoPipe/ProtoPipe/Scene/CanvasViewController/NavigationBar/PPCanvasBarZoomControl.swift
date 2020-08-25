@@ -8,12 +8,24 @@
 
 import UIKit
 
+protocol PPCanvasBarZoomControlDelegate: class {
+    
+}
+
 class PPCanvasBarZoomControl: UIView {
     
     var plusControl: UIButton!
     var minusControl: UIButton!
     
+    var ratio: Int = 100 {
+        didSet {
+            ratioLbl.text = "\(ratio)%"
+        }
+    }
+    
     var ratioLbl: UILabel!
+    
+    var timer: Timer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +37,7 @@ class PPCanvasBarZoomControl: UIView {
         snp.makeConstraints { (make) in make.size.equalTo(CGSize(width: 110, height: 30)) }
         
         plusControl = UIButton()
+        plusControl.tag = 500
         plusControl.layer.cornerRadius = 6
         plusControl.backgroundColor = .textFieldGray
         plusControl.setImage(#imageLiteral(resourceName: "minus"), for: .normal)
@@ -34,8 +47,11 @@ class PPCanvasBarZoomControl: UIView {
             make.top.left.bottom.equalTo(0)
             make.width.equalTo(plusControl.snp.height)
         }
+        plusControl.addTarget(self, action: #selector(touchDown(sender:)), for: .touchDown)
+        plusControl.addTarget(self, action: #selector(touchUp(sender:)), for: [.touchUpInside, .touchDragOutside])
         
         minusControl = UIButton()
+        minusControl.tag = 501
         minusControl.layer.cornerRadius = 6
         minusControl.backgroundColor = .textFieldGray
         minusControl.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
@@ -45,15 +61,46 @@ class PPCanvasBarZoomControl: UIView {
             make.top.right.bottom.equalTo(0)
             make.width.equalTo(minusControl.snp.height)
         }
+        minusControl.addTarget(self, action: #selector(touchDown(sender:)), for: .touchDown)
+        minusControl.addTarget(self, action: #selector(touchUp(sender:)), for: [.touchUpInside, .touchDragOutside])
         
         ratioLbl = UILabel()
-        ratioLbl.text = "80%"
+        ratioLbl.text = "\(ratio)%"
         ratioLbl.textColor = .smokeGray
-        ratioLbl.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        ratioLbl.font = UIFont.monospacedSystemFont(ofSize: 14, weight: .medium)
         ratioLbl.textAlignment = .center
         addSubview(ratioLbl)
         ratioLbl.snp.makeConstraints { (make) in
             make.centerX.centerY.equalToSuperview()
+        }
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(becomeDeath(notification:)), name: UIApplication.willResignActiveNotification, object: nil)
+    }
+    
+    @objc func touchDown(sender: UIButton) {
+        stopUpdatingRatioLabel()
+        startUpdatingRatioLabel(with: sender.tag - 500 != 0 )
+    }
+    
+    @objc func touchUp(sender: UIButton) {
+        stopUpdatingRatioLabel()
+    }
+    
+    @objc func becomeDeath(notification: Notification){
+       stopUpdatingRatioLabel()
+    }
+    
+    func startUpdatingRatioLabel(with isPlus: Bool) {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
+            self.ratio += isPlus ? 1 : -1
+        })
+        timer?.fire()
+    }
+    
+    func stopUpdatingRatioLabel() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
         }
     }
     

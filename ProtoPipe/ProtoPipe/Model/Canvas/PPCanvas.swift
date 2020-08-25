@@ -15,7 +15,7 @@ class PPCanvas: PPNode {
     init(name: String, device: PPDevice) {
         self.device = device
         
-        super.init(name: name)
+        super.init(type: PPNodeType.Canvas, name: name)
     }
     
     func addScene(scene: PPScene) {

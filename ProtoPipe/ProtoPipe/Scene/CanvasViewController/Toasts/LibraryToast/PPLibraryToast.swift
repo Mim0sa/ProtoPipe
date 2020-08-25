@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class PPLibraryToast: PPToastViewController, UITextFieldDelegate {
+class PPLibraryToast: PPToastViewController {
     
     var searchTextField: UITextField!
     
@@ -44,4 +44,11 @@ class PPLibraryToast: PPToastViewController, UITextFieldDelegate {
         }
     }
     
+}
+
+// MARK: - UITextFieldDelegate
+extension PPLibraryToast: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
 }

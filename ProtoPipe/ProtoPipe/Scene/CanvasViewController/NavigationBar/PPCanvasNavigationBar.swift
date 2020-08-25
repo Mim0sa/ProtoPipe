@@ -46,7 +46,6 @@ class PPCanvasNavigationBar: UIView {
         
         // barZoomControl
         barZoomControl = PPCanvasBarZoomControl()
-//        barZoomControl.delegate = self
         addSubview(barZoomControl)
         barZoomControl.snp.makeConstraints { (make) in
             make.bottom.equalTo(-10)

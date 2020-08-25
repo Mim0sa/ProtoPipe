@@ -41,6 +41,7 @@
 		839DB56B24AB03AC002F0141 /* PPTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB56A24AB03AC002F0141 /* PPTemplate.swift */; };
 		839DB56D24AB0C3E002F0141 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839DB56C24AB0C3E002F0141 /* Playground.storyboard */; };
 		839DB57224AB363C002F0141 /* PPNewFileToastTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DB57124AB363C002F0141 /* PPNewFileToastTemplateCell.swift */; };
+		839DC43B24F4E23F005955E4 /* PPNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839DC43A24F4E23F005955E4 /* PPNodeType.swift */; };
 		83C4D33F24CEA3CA00C36C71 /* PPNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C4D33E24CEA3CA00C36C71 /* PPNode.swift */; };
 		83C4D34124CEA4B100C36C71 /* PPScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C4D34024CEA4B100C36C71 /* PPScene.swift */; };
 		83C4D34324CEAA8C00C36C71 /* PPCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C4D34224CEAA8C00C36C71 /* PPCanvas.swift */; };
@@ -91,6 +92,7 @@
 		839DB56A24AB03AC002F0141 /* PPTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTemplate.swift; sourceTree = "<group>"; };
 		839DB56C24AB0C3E002F0141 /* Playground.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
 		839DB57124AB363C002F0141 /* PPNewFileToastTemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNewFileToastTemplateCell.swift; sourceTree = "<group>"; };
+		839DC43A24F4E23F005955E4 /* PPNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNodeType.swift; sourceTree = "<group>"; };
 		83C4D33E24CEA3CA00C36C71 /* PPNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNode.swift; sourceTree = "<group>"; };
 		83C4D34024CEA4B100C36C71 /* PPScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScene.swift; sourceTree = "<group>"; };
 		83C4D34224CEAA8C00C36C71 /* PPCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvas.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				83C4D33E24CEA3CA00C36C71 /* PPNode.swift */,
+				839DC43A24F4E23F005955E4 /* PPNodeType.swift */,
 				83C4D34224CEAA8C00C36C71 /* PPCanvas.swift */,
 				83C4D34024CEA4B100C36C71 /* PPScene.swift */,
 			);
@@ -540,6 +543,7 @@
 				1B3C39D82462CCD60082AF94 /* SceneDelegate.swift in Sources */,
 				83CDE7A82498934600BB72FB /* PPToastViewController.swift in Sources */,
 				1B34EAF124761FA3009AC43B /* PPFolderViewController.swift in Sources */,
+				839DC43B24F4E23F005955E4 /* PPNodeType.swift in Sources */,
 				8397193324BC204100A37E7E /* PPCanvasGridLayer.swift in Sources */,
 				1B34EAF72477BCF0009AC43B /* PPFolderNavigationBar.swift in Sources */,
 				83CDE7AC2498B1F800BB72FB /* PPToastNavigationBar.swift in Sources */,

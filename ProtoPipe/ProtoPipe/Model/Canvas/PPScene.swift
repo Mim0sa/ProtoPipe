@@ -2,7 +2,7 @@
 //  PPScene.swift
 //  ProtoPipe
 //
-//  Created by CM on 2020/7/27.
+//  Created by 吉乞悠 on 2020/7/27.
 //  Copyright © 2020 吉乞悠. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import Foundation
 class PPScene: PPNode {
     
     init(name: String, canvas: PPCanvas) {
-        super.init(name: name)
+        super.init(type: PPNodeType.Scene, name: name)
         
         parentNode = canvas
         size = canvas.device.screenSize
