@@ -406,7 +406,6 @@
 				1B3C39CF2462CCD60082AF94 /* Frameworks */,
 				1B3C39D02462CCD60082AF94 /* Resources */,
 				50B05536EC4E293195A4AC06 /* [CP] Embed Pods Frameworks */,
-				48BC90D23025E23F9DD345E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -466,37 +465,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		48BC90D23025E23F9DD345E3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		50B05536EC4E293195A4AC06 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProtoPipe/Pods-ProtoPipe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B6228554BB6E3827B3106A2E /* [CP] Check Pods Manifest.lock */ = {
