@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PPCanvasBarZoomControlDelegate: class {
-    
+    func zoomControlDidUpdateRatio(_ zoomControl: PPCanvasBarZoomControl, ratio: Int)
 }
 
 class PPCanvasBarZoomControl: UIView {
@@ -26,6 +26,8 @@ class PPCanvasBarZoomControl: UIView {
     var ratioLbl: UILabel!
     
     var timer: Timer?
+    
+    weak var delegate: PPCanvasBarZoomControlDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -93,6 +95,7 @@ class PPCanvasBarZoomControl: UIView {
     func startUpdatingRatioLabel(with isPlus: Bool) {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
             self.ratio += isPlus ? 1 : -1
+            self.delegate?.zoomControlDidUpdateRatio(self, ratio: self.ratio)
         })
         timer?.fire()
     }

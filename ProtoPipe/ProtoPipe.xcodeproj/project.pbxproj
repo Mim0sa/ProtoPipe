@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -189,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				1B34EAEC24761A42009AC43B /* PPCanvasViewController.swift */,
-				8397193224BC204100A37E7E /* PPCanvasGridLayer.swift */,
 				8397192F24BC0DB600A37E7E /* CanvasView */,
 				8397193424BC2B0200A37E7E /* Navigator */,
 				8397193524BC2B1000A37E7E /* Inspector */,
@@ -311,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				8397193024BC0DD600A37E7E /* PPCanvasView.swift */,
+				8397193224BC204100A37E7E /* PPCanvasGridLayer.swift */,
 			);
 			path = CanvasView;
 			sourceTree = "<group>";

@@ -15,6 +15,7 @@ protocol PPCanvasViewControllerDelegate: class {
 
 class PPCanvasViewController: PPBaseViewController {
     
+    let canvasView = PPCanvasView()
     let canvasNavigationBar = PPCanvasNavigationBar()
     let navigatorPageView = PPNavigatorPageView()
     let inspectorPageView = PPInspectorPageView()
@@ -26,10 +27,16 @@ class PPCanvasViewController: PPBaseViewController {
         
         view.backgroundColor = .sceneBlack
         
-        // Grid Layer
-        view.layer.addSublayer(PPCanvasGridLayer())
+        // Canvas View
+        canvasView.backgroundColor = .orange
+        view.addSubview(canvasView)
+        canvasView.snp.makeConstraints { (make) in
+            make.edges.equalTo(UIEdgeInsets(top: -view.frame.height, left: -view.frame.width,
+                                            bottom: -view.frame.height, right: -view.frame.width))
+        }
         
-        //view.layer.contents = UIImage(named: "pic")?.cgImage
+        // Grid Layer
+        canvasView.layer.addSublayer(PPCanvasGridLayer())
         
         // Navigation Bar
         canvasNavigationBar.delegate = self
@@ -62,6 +69,10 @@ class PPCanvasViewController: PPBaseViewController {
 
 // MARK: - PPCanvasNavigationBarDelegate
 extension PPCanvasViewController: PPCanvasNavigationBarDelegate {
+    func canvasNavigationBarDidChangeZoomRatio(_ canvasNavigationBar: PPCanvasNavigationBar, ratio: Int) {
+        canvasView.ratio = ratio
+    }
+    
     func canvasNavigationBarDidClickBackBtn(_ canvasNavigationBar: PPCanvasNavigationBar) {
         dismiss(animated: true, completion: nil)
     }

@@ -9,7 +9,14 @@
 import UIKit
 
 class PPCanvasView: UIView {
-
     
+    var ratio: Int = 100 {
+        didSet {
+            UIView.animate(withDuration: 0.1) {
+                self.transform = CGAffineTransform(scaleX: CGFloat(self.ratio) / 100.0, y: CGFloat(self.ratio) / 100.0)
+            }
+            
+        }
+    }
     
 }

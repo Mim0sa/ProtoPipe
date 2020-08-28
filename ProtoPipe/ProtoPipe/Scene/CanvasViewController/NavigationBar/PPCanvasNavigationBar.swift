@@ -17,6 +17,8 @@ protocol PPCanvasNavigationBarDelegate: class {
     func canvasNavigationBarDidClickLibraryBtn(_ canvasNavigationBar: PPCanvasNavigationBar)
 
     func canvasNavigationBarDidChangePageControl(_ canvasNavigationBar: PPCanvasNavigationBar, isSelected: [Bool])
+    
+    func canvasNavigationBarDidChangeZoomRatio(_ canvasNavigationBar: PPCanvasNavigationBar, ratio: Int)
 }
 
 class PPCanvasNavigationBar: UIView {
@@ -46,6 +48,7 @@ class PPCanvasNavigationBar: UIView {
         
         // barZoomControl
         barZoomControl = PPCanvasBarZoomControl()
+        barZoomControl.delegate = self
         addSubview(barZoomControl)
         barZoomControl.snp.makeConstraints { (make) in
             make.bottom.equalTo(-10)
@@ -130,9 +133,16 @@ extension PPCanvasNavigationBar {
     }
 }
 
-// MARK: -
+// MARK: - PPCanvasBarPageControlDelegate
 extension PPCanvasNavigationBar: PPCanvasBarPageControlDelegate {
     func barPageControlDidChange(_ canvasBarPageControl: PPCanvasBarPageControl, isSelected: [Bool]) {
         delegate?.canvasNavigationBarDidChangePageControl(self, isSelected: isSelected)
+    }
+}
+
+// MARK: - PPCanvasBarZoomControlDelegate
+extension PPCanvasNavigationBar: PPCanvasBarZoomControlDelegate {
+    func zoomControlDidUpdateRatio(_ zoomControl: PPCanvasBarZoomControl, ratio: Int) {
+        delegate?.canvasNavigationBarDidChangeZoomRatio(self, ratio: ratio)
     }
 }
